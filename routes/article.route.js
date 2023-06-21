@@ -15,7 +15,7 @@ res.status(404).json({ message: error.message });
 }
 });
 // afficher la liste des articles.
-router.get('/', async (req, res, )=> {
+router.get('/', async (req, res)=> {
 try {
 const articles = await Article.find({}, null, {sort: {'_id': -
 1}}).populate("scategorieID").exec();
@@ -57,7 +57,7 @@ req.params.articleId,
 const articles = await
 Article.findById(art._id).populate("scategorieID").exec();
 res.status(200).json(articles);
-} catch (error) {
+} catch (error) { 
 res.status(404).json({ message: error.message });
 }
 });
