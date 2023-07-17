@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express');   
 const router = express.Router();
 const Categorie=require("../models/categorie")
 // créer un nouvelle catégorie
@@ -29,7 +29,7 @@ router.get('/:categorieId',async(req, res)=>{
     try {
     const cat = await Categorie.findById(req.params.categorieId);
     res.status(200).json(cat);
-    13
+    
     } catch (error) {
     res.status(404).json({ message: error.message });
     }

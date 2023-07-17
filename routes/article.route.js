@@ -41,7 +41,7 @@ router.get('/:articleId',async(req, res)=>{
 try {
 const art = await Article.findById(req.params.articleId);
 res.status(200).json(art);
-19
+
 } catch (error) {
 res.status(404).json({ message: error.message });
 }
